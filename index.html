@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}\ bstatic\style.css">
+
+    <title>MusicBlog</title>
+</head>
+<body>
+
+    
+    <div class="">
+        <h1>Blog Music</h1>
+    
+       </div>
+       <div class=>
+        <a href="/form" class=>Publicar Blog</a>
+       </div>
+    
+       <div class=>
+        <table class="">
+            <thead>
+              <tr>
+                <th scope="col">Título</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for dbs in db %}
+              <tr>
+
+                <td>{{dbs.blog_titulo}}</td>
+
+                <td>
+                  <a href="/view/{{dbs.id}}" class="">Visualizar</a>
+                  <a href="/edit/{{dbs.id}}" class="">Editar</a>
+                  <a href="/delete/{{dbs.id}}" class="">Apagar</a>
+                </td>
+              </tr>
+              {% endfor %}
+            
+            </tbody>
+          </table>
+    
+       </div>
+    {% load static %} 
+    <script src="{% static 'javascript/.js' %}" ></script>
+</body>
+</html>
